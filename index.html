@@ -27,8 +27,9 @@
       font-weight: bold;
       margin: 0 1rem;
     }
+    /* Homeseite (Hero) – Foto im Hintergrund */
     .hero {
-      background: url('/mnt/data/image.png') no-repeat center/cover;
+      background: url('image/Front.png') no-repeat center/cover;
       height: 90vh;
       display: flex;
       flex-direction: column;
@@ -148,6 +149,30 @@
       text-align: center;
       font-size: 1rem;
     }
+    /* Neuer Bereich: Über uns – Text und Foto Platzhalter nebeneinander */
+    .about-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+    .about-text {
+      flex: 1;
+      min-width: 280px;
+    }
+    .about-image {
+      flex: 1;
+      min-width: 280px;
+      text-align: center;
+    }
+    .about-image img {
+      width: 100%;
+      max-width: 400px;
+      height: auto;
+      border-radius: 10px;
+    }
     footer {
       background-color: #f8d58b;
       text-align: center;
@@ -176,6 +201,9 @@
         margin-top: 2rem;
         padding-top: 2rem;
       }
+      .about-content {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -188,14 +216,24 @@
     <a href="#kontakt">Kontakt</a>
   </header>
 
+  <!-- Homeseite: Hintergrundfoto wird im Hero-Bereich verwendet -->
   <div class="hero" id="home">
     <h1>The Beats</h1>
     <p>Mehr als nur eine Coverband</p>
   </div>
 
+  <!-- Über uns: Bereich mit Foto-Platzhalter neben dem Text -->
   <section id="ueberuns">
     <h2>Über uns</h2>
-    <p>Die Band wurde 2023 als Hochschulband der Hochschule Worms gegründet. Mittlerweile hat sich die Band über Hochschulgrenzen hinaus erweitert und neue Bandmitglieder gefunden. Wir sind eine junge Band mit einem Altersdurchschnitt von ca. 24 Jahren. 2025 gehen wir den nächsten Schritt: Wir haben eine GbR angemeldet und sind nun eigenständig und unabhängig.</p>
+    <div class="about-content">
+      <div class="about-text">
+        <p>Die Band wurde 2023 als Hochschulband der Hochschule Worms gegründet. Mittlerweile hat sich die Band über Hochschulgrenzen hinaus erweitert und neue Bandmitglieder gefunden. Wir sind eine junge Band mit einem Altersdurchschnitt von ca. 24 Jahren. 2025 gehen wir den nächsten Schritt: Wir haben eine GbR angemeldet und sind nun eigenständig und unabhängig.</p>
+      </div>
+      <div class="about-image">
+        <!-- Platzhalter für ein Foto neben dem Text -->
+        <img src="images/Crew.png" alt="Bandfoto Platzhalter">
+      </div>
+    </div>
     <h3>Das sind wir…</h3>
     <div class="band-members">
       <!-- Vanessa -->
@@ -207,7 +245,7 @@
               <p>Vanessa Litzius (Gesang)</p>
             </div>
             <div class="flip-card-back">
-              Vanessa Litzius ist die Sängerin der Band
+              Vanessa Litzius ist immer schick angezogen hehe
             </div>
           </div>
         </div>
@@ -221,7 +259,7 @@
               <p>Elias Türktasar (Gesang)</p>
             </div>
             <div class="flip-card-back">
-              Elias Türktasar ist die Recarnation von Freddie Mecury
+              Elias Türktasar ist die Recarnation von Freddie Mercury
             </div>
           </div>
         </div>
@@ -277,7 +315,7 @@
               <p>Tobias Busch (Drums)</p>
             </div>
             <div class="flip-card-back">
-              Tobias Busch haut druf als ob es keinen Morgen gibt
+              Tobias Busch haut drauf als ob es keinen Morgen gibt
             </div>
           </div>
         </div>

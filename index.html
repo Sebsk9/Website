@@ -132,10 +132,16 @@
       height: auto;
       display: block;
     }
+    /* Hier das Styling für den Text unter dem Bild mit Rahmen und Hintergrund */
     .flip-card-front p {
-      margin: 0.5rem 0 0;
+      margin: 0.5rem auto 0 auto;
       font-size: 1rem;
       color: #333;
+      background-color: #f8d58b; /* Hintergrundfarbe des Text-Bereichs */
+      border: 1px solid #ccc;    /* Rahmen */
+      border-radius: 6px;       /* Abgerundete Ecken */
+      padding: 0.4rem 0.6rem;   /* Abstand innen */
+      width: 85%;               /* Breite des Textblocks */
     }
     .flip-card-back {
       background-color: #f8d58b;

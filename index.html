@@ -1,236 +1,329 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Beats</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #f8d58b;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-            z-index: 999;
-        }
-        header a {
-            text-decoration: none;
-            color: black;
-            font-weight: bold;
-            margin: 0 1rem;
-        }
-        .hero {
-            background: url('/mnt/data/image.png') no-repeat center/cover;
-            height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: #f8d58b;
-        }
-        .hero h1 {
-            font-size: 5rem;
-            margin: 0;
-        }
-        .hero p {
-            font-size: 1.5rem;
-            background-color: rgba(0,0,0,0.5);
-            padding: 0.5rem 1rem;
-        }
-        section {
-            padding: 2rem 10%;
-            background-color: #fcecc4;
-        }
-        section h2 {
-            text-align: center;
-        }
-        section p, ul, li {
-            max-width: 900px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        footer {
-            background-color: #f8d58b;
-            text-align: center;
-            padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-        footer a, footer p {
-            display: block;
-            margin: 0.3rem 0;
-            color: black;
-            text-decoration: none;
-        }
-        .gallery img {
-            width: 100%;
-            max-width: 400px;
-            margin: 1rem;
-            border-radius: 10px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .band-list li {
-            list-style: none;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        .band-members {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-            gap: 1rem;
-            text-align: center;
-        }
-        .member {
-            position: relative;
-            width: 150px;
-            height: 150px;
-            text-align: center;
-        }
-        .member img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 1rem;
-        }
-        .member .hover-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.7);
-            color: white;
-            padding: 10px;
-            font-size: 1rem;
-            display: none;
-            border-radius: 5px;
-        }
-        .member:hover .hover-text {
-            display: block;
-        }
-        #termine {
-            padding: 2rem 10%;
-            background-color: #fcecc4;
-            text-align: center;
-        }
-        #termine ul {
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 0;
-        }
-        #termine li {
-            list-style: none;
-            margin-bottom: 0.5rem;
-            font-size: 1.2rem;
-        }
-        @media screen and (max-width: 600px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            header {
-                flex-direction: column;
-            }
-            section {
-                padding: 1rem 5%;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Beats</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #fcecc4;
+    }
+    header {
+      background-color: #f8d58b;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 1rem;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+    header a {
+      text-decoration: none;
+      color: black;
+      font-weight: bold;
+      margin: 0 1rem;
+    }
+    .hero {
+      background: url('/mnt/data/image.png') no-repeat center/cover;
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #f8d58b;
+    }
+    .hero h1 {
+      font-size: 5rem;
+      margin: 0;
+    }
+    .hero p {
+      font-size: 1.5rem;
+      background-color: rgba(0,0,0,0.5);
+      padding: 0.5rem 1rem;
+    }
+    section {
+      padding: 2rem 10%;
+      background-color: #fcecc4;
+    }
+    section h2 {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    section p, ul, li {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Abstand im Termine-Bereich */
+    #termine {
+      margin-top: 3rem;
+      padding-top: 3rem;
+      border-top: 2px solid #f8d58b;
+      text-align: center;
+    }
+    #termine ul {
+      padding: 0;
+    }
+    #termine li {
+      list-style: none;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 400px;
+      margin: 1rem;
+      border-radius: 10px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    /* Flip Card Effekt für die Bandmitglieder */
+    .band-members {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 1rem;
+      text-align: center;
+    }
+    .member {
+      perspective: 1000px;
+      width: 200px;
+      height: 250px;
+    }
+    .flip-card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+    }
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .member:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+    .flip-card-front {
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .flip-card-front img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .flip-card-front p {
+      margin: 0.5rem 0 0;
+      font-size: 1rem;
+      color: #333;
+    }
+    .flip-card-back {
+      background-color: #f8d58b;
+      color: white;
+      transform: rotateY(180deg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      box-sizing: border-box;
+      text-align: center;
+      font-size: 1rem;
+    }
+    footer {
+      background-color: #f8d58b;
+      text-align: center;
+      padding: 1rem;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+    footer a, footer p {
+      display: block;
+      margin: 0.3rem 0;
+      color: black;
+      text-decoration: none;
+    }
+    @media screen and (max-width: 600px) {
+      .hero h1 {
+        font-size: 3rem;
+      }
+      header {
+        flex-direction: column;
+      }
+      section {
+        padding: 1rem 5%;
+      }
+      #termine {
+        margin-top: 2rem;
+        padding-top: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <a href="#home">Home</a>
-        <a href="#ueberuns">Über uns</a>
-        <a href="#termine">Termine</a>
-        <a href="#galerie">Galerie</a>
-        <a href="#kontakt">Kontakt</a>
-    </header>
+  <header>
+    <a href="#home">Home</a>
+    <a href="#ueberuns">Über uns</a>
+    <a href="#termine">Termine</a>
+    <a href="#galerie">Galerie</a>
+    <a href="#kontakt">Kontakt</a>
+  </header>
 
-    <div class="hero" id="home">
-        <h1>The Beats</h1>
-        <p>Mehr als nur eine Coverband</p>
+  <div class="hero" id="home">
+    <h1>The Beats</h1>
+    <p>Mehr als nur eine Coverband</p>
+  </div>
+
+  <section id="ueberuns">
+    <h2>Über uns</h2>
+    <p>Die Band wurde 2023 als Hochschulband der Hochschule Worms gegründet. Mittlerweile hat sich die Band über Hochschulgrenzen hinaus erweitert und neue Bandmitglieder gefunden. Wir sind eine junge Band mit einem Altersdurchschnitt von ca. 24 Jahren. 2025 gehen wir den nächsten Schritt: Wir haben eine GbR angemeldet und sind nun eigenständig und unabhängig.</p>
+    <h3>Das sind wir…</h3>
+    <div class="band-members">
+      <!-- Vanessa -->
+      <div class="member">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Vanessa.png" alt="Vanessa Litzius (Gesang)">
+              <p>Vanessa Litzius (Gesang)</p>
+            </div>
+            <div class="flip-card-back">
+              Vanessa Litzius ist die Sängerin der Band
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Elias -->
+      <div class="member">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Elias.png" alt="Elias Türktasar (Gesang)">
+              <p>Elias Türktasar (Gesang)</p>
+            </div>
+            <div class="flip-card-back">
+              Elias Türktasar ist der zweite Sänger
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Thorben -->
+      <div class="member">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Thorben.png" alt="Thorben Frey (Gitarre)">
+              <p>Thorben Frey (Gitarre)</p>
+            </div>
+            <div class="flip-card-back">
+              Thorben Frey spielt Gitarre
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sebastian -->
+      <div class="member">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Sebastian.png" alt="Sebastian Konz (Gitarre)">
+              <p>Sebastian Konz (Gitarre)</p>
+            </div>
+            <div class="flip-card-back">
+              Sebastian Konz spielt Gitarre
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Daniel -->
+      <div class="member">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Daniel.png" alt="Daniel Weitsch (Bass)">
+              <p>Daniel Weitsch (Bass)</p>
+            </div>
+            <div class="flip-card-back">
+              Daniel Weitsch spielt Bass
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Tobias -->
+      <div class="member">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Tobias.png" alt="Tobias Busch (Drums)">
+              <p>Tobias Busch (Drums)</p>
+            </div>
+            <div class="flip-card-back">
+              Tobias Busch spielt Drums
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Simon -->
+      <div class="member">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="images/Simon.png" alt="Simon Schröder (Piano / Keyboard)">
+              <p>Simon Schröder (Piano / Keyboard)</p>
+            </div>
+            <div class="flip-card-back">
+              Simon Schröder spielt Piano / Keyboard
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <section id="ueberuns">
-        <h2>Über uns</h2>
-        <p>Die Band wurde 2023 als Hochschulband der Hochschule Worms gegründet. Mittlerweile hat sich die Band über Hochschulgrenzen hinaus erweitert und neue Bandmitglieder gefunden. Wir sind eine junge Band mit einem Altersdurchschnitt von ca. 24 Jahren. 2025 gehen wir den nächsten Schritt: Wir haben eine GbR angemeldet und sind nun eigenständig und unabhängig.</p>
-        <h3>Das sind wir…</h3>
-        <div class="band-members">
-            <div class="member">
-                <img src="images/Vanessa.png" alt="Vanessa Litzius (Gesang)">
-                <span class="hover-text">Vanessa Litzius ist die Sängerin der Band</span>
-                <p>Vanessa Litzius (Gesang)</p>
-            </div>
-            <div class="member">
-                <img src="images/Elias.png" alt="Elias Türktasar (Gesang)">
-                <span class="hover-text">Elias Türktasar ist der zweite Sänger</span>
-                <p>Elias Türktasar (Gesang)</p>
-            </div>
-            <div class="member">
-                <img src="images/Thorben.png" alt="Thorben Frey (Gitarre)">
-                <span class="hover-text">Thorben Frey spielt Gitarre</span>
-                <p>Thorben Frey (Gitarre)</p>
-            </div>
-            <div class="member">
-                <img src="images/Sebastian.png" alt="Sebastian Konz (Gitarre)">
-                <span class="hover-text">Sebastian Konz spielt Gitarre</span>
-                <p>Sebastian Konz (Gitarre)</p>
-            </div>
-            <div class="member">
-                <img src="images/Daniel.png" alt="Daniel Weitsch (Bass)">
-                <span class="hover-text">Daniel Weitsch spielt Bass</span>
-                <p>Daniel Weitsch (Bass)</p>
-            </div>
-            <div class="member">
-                <img src="images/Tobias.png" alt="Tobias Busch (Drums)">
-                <span class="hover-text">Tobias Busch spielt Drums</span>
-                <p>Tobias Busch (Drums)</p>
-            </div>
-            <div class="member">
-                <img src="images/Simon.png" alt="Simon Schröder (Piano / Keyboard)">
-                <span class="hover-text">Simon Schröder spielt Piano / Keyboard</span>
-                <p>Simon Schröder (Piano / Keyboard)</p>
-            </div>
-        </div>
-    </section>
+  <section id="termine">
+    <h2>Termine</h2>
+    <ul>
+      <li>So, 08.06.2025, 16-20 Uhr - Kuhfladen-Roulette Bingen</li>
+      <li>Do, 12.06.2025, 19-23 Uhr - Showabend Hochschule Worms</li>
+      <li>Fr, 13.06.2025, 19-23 Uhr - Showabend Hochschule Worms</li>
+    </ul>
+  </section>
 
-    <section id="termine">
-        <h2>Termine</h2>
-        <ul>
-            <li>So, 08.06.2025, 16-20 Uhr - Kuhfladen-Roulette Bingen</li>
-            <li>Do, 12.06.2025, 19-23 Uhr - Showabend Hochschule Worms</li>
-            <li>Fr, 13.06.2025, 19-23 Uhr - Showabend Hochschule Worms</li>
-        </ul>
-    </section>
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <div class="gallery">
+      <img src="images/Show1.png" alt="Impressionen der letzten Gigs">
+      <!-- Weitere Bilder können hier ergänzt werden -->
+    </div>
+  </section>
 
-    <section id="galerie">
-        <h2>Galerie</h2>
-        <div class="gallery">
-            <img src="images/Show1.png" alt="Impressionen der letzten Gigs">
-            <!-- Weitere Bilder können hier ergänzt werden -->
-        </div>
-    </section>
+  <section id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Schreib uns gerne eine E-Mail: <a href="mailto:Thebeats.contact@gmail.com">Thebeats.contact@gmail.com</a></p>
+  </section>
 
-    <section id="kontakt">
-        <h2>Kontakt</h2>
-        <p>Schreib uns gerne eine E-Mail: <a href="mailto:Thebeats.contact@gmail.com">Thebeats.contact@gmail.com</a></p>
-    </section>
-
-    <footer>
-        <a href="https://www.instagram.com/thebeats.worms/" target="_blank">Unser Instagram: @thebeats.worms</a>
-        <p>Email: <a href="mailto:Thebeats.contact@gmail.com">Thebeats.contact@gmail.com</a></p>
-    </footer>
+  <footer>
+    <a href="https://www.instagram.com/thebeats.worms/" target="_blank">Unser Instagram: @thebeats.worms</a>
+    <p>Email: <a href="mailto:Thebeats.contact@gmail.com">Thebeats.contact@gmail.com</a></p>
+  </footer>
 </body>
 </html>

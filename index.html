@@ -29,7 +29,7 @@
     }
     /* Homeseite (Hero) – Foto im Hintergrund */
     .hero {
-      background: url('image/Front.png') no-repeat center/cover;
+      background: url('/mnt/data/Front.png') no-repeat center/cover;
       height: 90vh;
       display: flex;
       flex-direction: column;
@@ -149,7 +149,7 @@
       text-align: center;
       font-size: 1rem;
     }
-    /* Neuer Bereich: Über uns – Text und Foto Platzhalter nebeneinander */
+    /* Neuer Bereich "Über uns" – Text und Foto nebeneinander */
     .about-content {
       display: flex;
       align-items: center;
@@ -172,6 +172,14 @@
       max-width: 400px;
       height: auto;
       border-radius: 10px;
+    }
+    /* Zusätzlicher Abstand zwischen "Über uns" und "Das sind wir..." */
+    #ueberuns h3 {
+      margin-top: 3rem;
+    }
+    /* Kontaktbereich verkleinern */
+    #kontakt {
+      padding: 1rem 10%;
     }
     footer {
       background-color: #f8d58b;
@@ -201,8 +209,8 @@
         margin-top: 2rem;
         padding-top: 2rem;
       }
-      .about-content {
-        flex-direction: column;
+      #kontakt {
+        padding: 1rem 5%;
       }
     }
   </style>
@@ -216,7 +224,7 @@
     <a href="#kontakt">Kontakt</a>
   </header>
 
-  <!-- Homeseite: Hintergrundfoto wird im Hero-Bereich verwendet -->
+  <!-- Homeseite: Hintergrundfoto im Hero-Bereich -->
   <div class="hero" id="home">
     <h1>The Beats</h1>
     <p>Mehr als nur eine Coverband</p>
@@ -245,7 +253,7 @@
               <p>Vanessa Litzius (Gesang)</p>
             </div>
             <div class="flip-card-back">
-              Vanessa Litzius ist immer schick angezogen hehe
+              Vanessa Litzius ist die Sängerin der Band
             </div>
           </div>
         </div>
@@ -340,6 +348,7 @@
   <section id="termine">
     <h2>Termine</h2>
     <ul>
+      <li>Sa, 26.04.2025  20-24 Uhr - Hockey Verein idk lol </li>
       <li>So, 08.06.2025, 16-20 Uhr - Kuhfladen-Roulette Bingen</li>
       <li>Do, 12.06.2025, 19-23 Uhr - Showabend Hochschule Worms</li>
       <li>Fr, 13.06.2025, 19-23 Uhr - Showabend Hochschule Worms</li>

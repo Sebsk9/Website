@@ -27,31 +27,31 @@
       font-weight: bold;
       margin: 0 1rem;
     }
-
-    /* Hero-Bereich mit gelblichem Schleier */
+    /* Hero-Bereich mit Hintergrundbild und Logo */
     .hero {
-      /* Erster Hintergrund: Gelb-Transparenz (Schleier), zweiter Hintergrund: Bild */
       background: 
-        linear-gradient(rgba(255, 235, 100, 0.0), rgba(255, 235, 100, 0.0)), 
-        url('images/Showabend.jpg') center/cover no-repeat;
+        linear-gradient(rgba(255, 235, 100, 0.1), rgba(255, 235, 100, 0.1)),
+        url('images/Showabend.jpg') no-repeat center/cover;
       height: 90vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
+      position: relative;
       color: #f8d58b;
     }
-    .hero h1 {
-      font-size: 5rem;
-      margin: 0;
+    /* Logo statt Text */
+    .hero .logo {
+      width: 300px; /* Passe die Größe nach Bedarf an */
+      height: auto;
     }
     .hero p {
       font-size: 1.5rem;
       background-color: rgba(0,0,0,0.5);
       padding: 0.5rem 1rem;
+      margin-top: 1rem;
     }
-
     section {
       padding: 2rem 10%;
       background-color: #fcecc4;
@@ -89,7 +89,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     /* Flip Card Effekt für die Bandmitglieder */
     .band-members {
       display: flex;
@@ -160,7 +159,6 @@
       text-align: center;
       font-size: 1rem;
     }
-
     /* Neuer Bereich "Über uns" – Text und Foto nebeneinander */
     .about-content {
       display: flex;
@@ -193,8 +191,6 @@
     #kontakt {
       padding: 1rem 10%;
     }
-
-    /* Footer mit Social Icons */
     footer {
       background-color: #f8d58b;
       text-align: center;
@@ -219,17 +215,16 @@
       height: 40px;
       border-radius: 50%;
     }
-    .social-icons a img {
+    .social-icons a svg {
       width: 20px;
       height: 20px;
-      filter: invert(100%);
+      fill: #fff;
     }
     footer a, footer p {
       color: black;
       text-decoration: none;
       margin: 0.3rem 0;
     }
-
     @media screen and (max-width: 600px) {
       .hero h1 {
         font-size: 3rem;
@@ -247,13 +242,6 @@
       #kontakt {
         padding: 1rem 5%;
       }
-      .social-icons {
-        gap: 0.5rem;
-      }
-      .social-icons a {
-        width: 35px;
-        height: 35px;
-      }
     }
   </style>
 </head>
@@ -266,9 +254,10 @@
     <a href="#kontakt">Kontakt</a>
   </header>
 
-  <!-- Homeseite: Hintergrundfoto mit gelblichem Schleier -->
+  <!-- Homeseite: Hintergrundfoto mit gelblichem Schleier und Logo -->
   <div class="hero" id="home">
-    <h1>The Beats</h1>
+    <!-- Logo wird anstelle von "The Beats" angezeigt -->
+    <img src="Images/Logo.png" alt="The Beats Logo" class="logo">
     <p>Mehr als nur eine Coverband</p>
   </div>
 
@@ -412,18 +401,23 @@
     </p>
   </section>
 
-<footer>
-  <div class="social-icons" style="display: flex; justify-content: center; gap: 1rem; margin-bottom: 0.5rem;">
-    <a href="mailto:Thebeats.contact@gmail.com" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background-color: #ffcc00; width: 40px; height: 40px; border-radius: 50%;">
-      <img src="Images/Icons/Mail.svg" alt="Email" width="24" height="24">
-    </a>
-    <a href="https://www.instagram.com/thebeats.worms/" target="_blank" style="display: inline-flex; align-items: center; justify-content: center; background-color: #ffcc00; width: 40px; height: 40px; border-radius: 50%;">
-      <img src="Images/Icons/Insta.svg" alt="Instagram" width="24" height="24">
-    </a>
-  </div>
-  <p>Email: <a href="mailto:Thebeats.contact@gmail.com">Thebeats.contact@gmail.com</a></p>
-</footer>
-
-
+  <footer>
+    <!-- Social Icons als Inline-SVGs -->
+    <div class="social-icons">
+      <a href="mailto:Thebeats.contact@gmail.com" target="_blank">
+        <!-- Envelope SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="#fff" d="M20 4H4C2.897 4 2 4.897 2 6v12c0 1.103.897 2 2 2h16c1.103 0 2-.897 2-2V6C22 4.897 21.103 4 20 4zM4 8l8 5 8-5v-2l-8 5-8-5V8z"/>
+        </svg>
+      </a>
+      <a href="https://www.instagram.com/thebeats.worms/" target="_blank">
+        <!-- Instagram SVG -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24">
+          <path fill="#fff" d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.31.975.975 1.248 2.243 1.31 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.335 2.633-1.31 3.608-.975.975-2.243 1.248-3.608 1.31-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.335-3.608-1.31-.975-.975-1.248-2.243-1.31-3.608C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.31-3.608.975-.975 2.243-1.248 3.608-1.31C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.013 7.052.072 5.771.131 4.675.428 3.757 1.347 2.838 2.266 2.541 3.362 2.482 4.643.013 8.332 0 8.741 0 12s.013 3.668.072 4.948c.059 1.281.356 2.377 1.275 3.296.919.919 2.015 1.216 3.296 1.275C8.332 23.987 8.741 24 12 24s3.668-.013 4.948-.072c1.281-.059 2.377-.356 3.296-1.275.919-.919 1.216-2.015 1.275-3.296.059-1.28.072-1.689.072-4.948s-.013-3.668-.072-4.948c-.059-1.281-.356-2.377-1.275-3.296C19.325.428 18.229.131 16.948.072 15.668.013 15.259 0 12 0zM12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+        </svg>
+      </a>
+    </div>
+    <p>Email: <a href="mailto:Thebeats.contact@gmail.com">Thebeats.contact@gmail.com</a></p>
+  </footer>
 </body>
 </html>
